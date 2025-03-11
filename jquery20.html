@@ -1,0 +1,36 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>val demo</title>
+<style>
+p{
+color:red;
+margin:4px;
+}
+b{
+color:blue;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js">
+</script>
+</head>
+<body>
+<p></p>
+<select id="multiple" multiple="multiple">
+<option selected="selected">multiple1</option>
+<option>multiple2</option>
+<option>multiple3</option>
+</select>
+<script>
+function displayVals(){
+var multipleValues=$("#multiple").val()||[];
+$("p").html("<b>multiple:</b>"+multipleValues.join(","));
+}
+$("select").change(displayVals);
+displayVals();
+</script>
+</body>
+</html>
