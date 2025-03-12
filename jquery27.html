@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title> demo</title>
+<style>
+p{
+padding:50px;
+background:yellow;
+font-weight:bold;
+curser:pointer;
+}
+p.over{
+background:#ccc;
+}
+span{
+color:red;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.11.3.js">
+</script>
+</head>
+<body>
+<p>click or double click on the statement</p>
+<span></span>
+<script>
+$("p").blind("click",function(event){
+varstr="("+event.pageX+","+event.pageY+");
+$("span").text("this is a double click on "+this.nodeName);
+});
+$("p").blind("mousecenter mouseleave",function(event){
+$(this).toggleClass("over");
+});
+</script>
+</body>
+</html>
