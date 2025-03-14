@@ -1,0 +1,23 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-1.10.1.js">
+</script>
+<script>
+$(document).ready(function(){
+$("input").keyup(function(){
+$("input").css("background-color","green");
+});
+$("input").keydown(function(){
+$("input").css("background-color","violet");
+});
+});
+</script>
+</head>
+<body>
+write something<input type="text">
+</body>
+</html>
