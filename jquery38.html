@@ -1,0 +1,31 @@
+<doctype html>
+<html>
+<head>
+<title>Coffee Order</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<p>How would you like your coffee?</p>
+<form id="coffeeForm">
+<input type="checkbox" name="coffee" value="cream">With cream<br>
+<input type="checkbox" name="coffee" value="sugar">With sugar<br>
+<br>
+<input type="button" id="sendOrder" value="Send order">
+<br><br>
+<input type="text" id="order" size="50">
+</form>
+<script>
+$(document).ready(function () {
+$("#sendOrder").click(function () {
+var coffeeForm = $("#coffeeForm");
+var txt = "";
+coffeeForm.find("input[name='coffee']:checked").each(function () 
+{
+txt += $(this).val() + " ";
+});
+$("#order").val("You ordered a coffee with: " + txt);
+});
+});
+</script>
+</body>
+</html>
