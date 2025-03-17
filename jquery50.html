@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"content=width=device-width,initial-scale=1.0">
+<title>demo</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+$(document).ready(function(){
+greet();
+});
+function greet() {
+var name=prompt("Enter Your name","");
+var age=prompt("Enter Your age","");
+if (age < 18) {
+window.location = "http://www.google.com";
+alert("Not eligible to visit");
+}
+else 
+{
+alert("Welcome to my site"+name);
+}
+}
+</script>
+</body>
+</html>
