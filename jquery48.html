@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Select Multiple Values Display</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<h2>Select multiple values from the list:</h2>
+<form>
+<label for="myList">Choose values:</label>
+<select id="myList" multiple></select>
+</form>
+<p id="selectedValuesParagraph">Selected values will be displayed here.</p>
+<script>
+$(document).ready(function () {
+$("#myList").change(function () {
+// Get the selected values from the <select> element
+var selectedValues = $("#myList").val();
+// Display the selected values in the paragraph
+if (selectedValues) {
+$("#selectedValuesParagraph").text("Selected values: " + selectedValues.join(', '));
+} else {
+$("#selectedValuesParagraph").text("Selected values will be displayed here.");
+}
+});
+});
+</script>
+<script>
+// Populate the dropdown with options
+$(document).ready(function () {
+var options = [
+{ value: "value1", text: "Value 1" },
+{ value: "value2", text: "Value 2" },
+{ value: "value3", text: "Value 3" },
+{value:  "value4", text: "Value 4" }
+];
+options.forEach(function (option) {
+$("#myList").append($("<option>", {
+value: option.value,
+text: option.text
+}));
+});
+});
+</script>
+</body>
+</html>
+
+                
