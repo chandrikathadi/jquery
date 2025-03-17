@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>demo</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<form name="fm1">
+<label for="fname">First Name:</label><input type="text" name="fname" value="">
+<input type="submit" value="submit" id="submitBtn">
+</form>
+<script type="text/javascript">
+$(document).ready(function () {
+$("#submitBtn").click(function () {
+return checkBlank();
+});
+});
+function checkBlank() {
+if ($.trim($("input[name='fname']").val()) === "") {
+alert("Please provide your name!");
+$("input[name='fname']").focus();
+return false;
+}
+return true;
+}
+</script>
+</body>
+</html>
